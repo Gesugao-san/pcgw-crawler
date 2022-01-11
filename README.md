@@ -1,7 +1,7 @@
 
 <p align="center">
 	<h2 align="center">
-		<a href="https://github.com/Gesugao-san/infrastructure-template-repository">Infrastructure</a> template
+		<a href="https://github.com/Gesugao-san/pcgw-crawler">PCGW Crawler</a>
 	</h2>
 </p>
 
