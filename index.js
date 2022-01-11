@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const parameters = {
-	appid: 10, // 1162700, 730, 10
+	appid: 10, // 1162700, 730, 570, 10
 	l: 'en'
 };
 
@@ -13,7 +13,7 @@ const parameters = {
 //const get_request_args = querystring.stringify(parameters);
 
 const req_options = {
-	uri: 'http://store.steampowered.com/api/appdetails/?appids=' + parameters["appid"] + '&l=en',
+	uri: 'http://store.steampowered.com/api/appdetails/?appids=' + parameters["appid"] + '&l=en&format=json',
 	port: 80,
 	method: 'GET',
     headers: {
@@ -22,12 +22,17 @@ const req_options = {
     }
 };
 
-console.log('Data receiving (AppID: ' + parameters["appid"] + ')...');
+console.log('Target info:');
+console.log('Steam AppID:', parameters["appid"]);
+console.log('Steam page URL: https://store.steampowered.com/app/' + parameters["appid"] + '/');
+console.log('Steam Web API URL:', req_options.uri);
+
+console.log('Data receiving in progress...');
 request(req_options, function(error, response, body) {
 	if (!error && response.statusCode == 200) {
 		body_parsed = JSON.parse(body);
-		console.log('Data received:', body_parsed);
-		console.log('Data saving...');
+		console.log('Data received:\n', body_parsed);
+		console.log('Data saving in progress...');
 		fs.writeFile('./cache/' + parameters["appid"] + '.json', JSON.stringify(body_parsed, null, 2), function(err, result) {
 			if (err)
 				console.log('Error occured while data saving: ', err);
@@ -46,7 +51,7 @@ request(req_options, function(error, response, body) {
 		console.log('{{Infobox game/row/publisher|' + body_parsed[parameters["appid"]].data.publishers + '}}');
 		console.log('|engines      = ');
 		console.log('{{}}'); //ToDo?
-		console.log('|release dates= ');
+		console.log('|release dates= '); // See "platforms" field from API
 		console.log('{{Infobox game/row/date|Steam|' + body_parsed[parameters["appid"]].data.release_date["date"] + '}}');
 		console.log('|reception    = ');
 		if (!typeof body_parsed[parameters["appid"]].data.metacritic in ['undefined', null]) {
@@ -56,7 +61,7 @@ request(req_options, function(error, response, body) {
 		} else {
 			console.log('{{}}');
 		};
-		console.log('|taxonomy     = ');
+		console.log('|taxonomy     = '); // See "categories" and "genres" fields from API
 		console.log('{{}}');
 		console.log('|steam appid  =', parameters["appid"]);
 		if (!typeof body_parsed[parameters["appid"]].data.demos in ['undefined', null]) {
@@ -85,10 +90,26 @@ request(req_options, function(error, response, body) {
 		console.log('{{Availability|');
 		console.log('{{Availability/row| Steam |', parameters["appid"], '| Steam | | | Windows?, OS X?, Linux? }}');
 		console.log('}}');
+		console.log('');
+		console.log('==Audio==');
+		console.log('<!-- ... -->');
+		console.log('{{L10n|content=');
 		if (!typeof body_parsed[parameters["appid"]].data.demos in ['undefined', null]) {
 			console.log('{{ii}} A demo is available from {{store link|Steam|' + body_parsed[parameters["appid"]].data.demos + '}}.');
 		};
-		console.log('');
+		console.log('<!-- Passing: Game data, Video, Input, Audio (part) -->');
+		for (lang_selected in body_parsed[parameters["appid"]].data.supported_languages.split('<br>')[0].split(',')) {
+			console.log('{{L10n/switch');
+			console.log('|language  =', body_parsed[parameters["appid"]].data.supported_languages.split('<br>')[0].split(', ')[lang_selected].replace('<strong>*</strong>', ''));
+			console.log('|interface = true');
+			//body_parsed[parameters["appid"]].data.supported_languages.split('<br>')[0].split(', ')[lang_selected].replace('<strong>*</strong>', '*')[-1] == '*');
+			console.log('|audio     =', body_parsed[parameters["appid"]].data.supported_languages.split('<br>')[0].split(', ')[lang_selected].includes('*'))
+			console.log('|subtitles =', body_parsed[parameters["appid"]].data.supported_languages.split('<br>')[0].split(', ')[lang_selected].includes('*'))
+			console.log('|notes     = ');
+			console.log('|fan       = ');
+			console.log('}}');
+		}
+		console.log('}}');
 		console.log('');
 	} else {
 		console.error('Error occured while data receiving:', error);
