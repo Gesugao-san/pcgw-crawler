@@ -34,7 +34,7 @@
 
 ---
 
-> A script written in Node.js, intended as an assistant for creating new and correcting old pages on the PC Gaming Wiki (PCGW in short).
+> A script written in [Node.js](https://nodejs.org/en/), intended as an assistant for creating new and correcting old pages on the [PC Gaming Wiki](https://pcgamingwiki.com) (PCGW in short) by *automatic gathering information* from official [Steam](https://store.steampowered.com/?l=en) (others websites are in planes too) [Web API](https://steamcommunity.com/dev?l=en) and *generating pages* on it's own with skipping fields that intended to manual fill.
 
 ## Table of Contents
 
