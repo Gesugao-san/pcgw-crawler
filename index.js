@@ -109,6 +109,70 @@ request(req_options, function(error, response, body) {
 			console.log('|fan       = ');
 			console.log('}}');
 		}
+		console.log('<!-- Passing: Other information -->');
+		console.log('==System requirements==');
+		if (body_parsed[parameters["appid"]].data.platforms["windows"] === true) {
+			console.log('|OSfamily = Windows');
+			console.log('|minOS    = ');
+			console.log('|minCPU   = ');
+			console.log('|minRAM   = ');
+			console.log('|minHD    = ');
+			console.log('|minGPU   = ');
+			console.log('|minGPU2  = ');
+			console.log('|minVRAM  = ');
+			console.log('|minDX    = ');
+			console.log('|recOS    = ');
+			console.log('|recCPU   = ');
+			console.log('|recRAM   = ');
+			console.log('|recHD    = ');
+			console.log('|recGPU   = ');
+			console.log('|recGPU2  = ');
+			console.log('|recVRAM  = ');
+			console.log('|recDX    = ');
+			//console.log('|notes    = {{ii}} <p>' + body_parsed[parameters["appid"]].data.pc_requirements.minimum.split('<p>')[1].replace(/\r?\n|\r/g, " "));
+			//console.log('<p>' + body_parsed[parameters["appid"]].data.pc_requirements.minimum.split('<p>')[2].replace(/\r?\n|\r/g, " "));
+			console.log('|notes    = {{ii}}', body_parsed[parameters["appid"]].data.pc_requirements.minimum);
+		}
+		if (body_parsed[parameters["appid"]].data.platforms["mac"] === true) {
+			console.log('|OSfamily = OS X');
+			console.log('|minOS    = ');
+			console.log('|minCPU   = ');
+			console.log('|minRAM   = ');
+			console.log('|minHD    = ');
+			console.log('|minGPU   = ');
+			console.log('|minGPU2  = ');
+			console.log('|minVRAM  = ');
+			console.log('|minDX    = ');
+			console.log('|recOS    = ');
+			console.log('|recCPU   = ');
+			console.log('|recRAM   = ');
+			console.log('|recHD    = ');
+			console.log('|recGPU   = ');
+			console.log('|recGPU2  = ');
+			console.log('|recVRAM  = ');
+			console.log('|recDX    = ');
+			console.log('|notes    = {{ii}}', body_parsed[parameters["appid"]].data.mac_requirements.minimum);
+		}
+		if (body_parsed[parameters["appid"]].data.platforms["linux"] === true) {
+			console.log('|OSfamily = Linux');
+			console.log('|minOS    = ');
+			console.log('|minCPU   = ');
+			console.log('|minRAM   = ');
+			console.log('|minHD    = ');
+			console.log('|minGPU   = ');
+			console.log('|minGPU2  = ');
+			console.log('|minVRAM  = ');
+			console.log('|minDX    = ');
+			console.log('|recOS    = ');
+			console.log('|recCPU   = ');
+			console.log('|recRAM   = ');
+			console.log('|recHD    = ');
+			console.log('|recGPU   = ');
+			console.log('|recGPU2  = ');
+			console.log('|recVRAM  = ');
+			console.log('|recDX    = ');
+			console.log('|notes    = {{ii}}', body_parsed[parameters["appid"]].data.linux_requirements.minimum);
+		}
 		console.log('}}');
 		console.log('');
 	} else {
