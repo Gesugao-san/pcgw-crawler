@@ -34,9 +34,10 @@ request(req_options, function(error, response, body) {
 			else
 				console.log('Data saved.');
 		});
-		console.log('Is request was success (according to Steam):', body_parsed[parameters["appid"]].success);
+		console.log('Is request was success (according to Steam Web API):', body_parsed[parameters["appid"]].success);
 		console.log('');
 		console.log('{{auto-generated}}');
+		console.log('{{stub}}');
 		console.log('{{Infobox game');
 		console.log('|cover        = ' + body_parsed[parameters["appid"]].data.name + ' cover.jpg');
 		console.log('|developers   = ');
@@ -87,22 +88,6 @@ request(req_options, function(error, response, body) {
 		if (!typeof body_parsed[parameters["appid"]].data.demos in ['undefined', null]) {
 			console.log('{{ii}} A demo is available from {{store link|Steam|' + body_parsed[parameters["appid"]].data.demos + '}}.');
 		};
-		console.log('');
-		console.log('==Game data==');
-		console.log('===Configuration file(s) location===');
-		console.log('{{Game data|');
-		console.log('{{Game data/config|Windows|FOR_MANUAL_EDITING}}');
-		console.log('{{Game data/config|OS X|FOR_MANUAL_EDITING}}');
-		console.log('{{Game data/config|Linux|FOR_MANUAL_EDITING}}');
-		console.log('}}');
-		console.log('{{XDG|unknown}}');
-		console.log('');
-		console.log('===Save game data location===');
-		console.log('{{Game data|');
-		console.log('{{Game data/saves|Windows|}}');
-		console.log('{{Game data/saves|OS X|}}');
-		console.log('{{Game data/saves|Linux|}}');
-		console.log('}}');
 		console.log('');
 		console.log('');
 	} else {
