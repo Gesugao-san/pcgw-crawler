@@ -3,12 +3,6 @@
 	<h2 align="center">
 		<a href="https://github.com/Gesugao-san/infrastructure-template-repository">Infrastructure</a> template
 	</h2>
-	<p align="center">
-		Origin:
-		<a href="https://github.com/BYOND/infrastructure-template-repository">
-			BYOND/infrastructure-template-repository
-		</a>
-	</p>
 </p>
 
 <p align="center">
