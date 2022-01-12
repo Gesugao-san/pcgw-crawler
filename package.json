@@ -26,6 +26,7 @@
   "homepage": "https://github.com/Gesugao-san/pcgw-crawler#readme",
   "dependencies": {
     "fs": "^0.0.1-security",
+    "inquirer": "^8.2.0",
     "request": "^2.88.2"
   }
 }

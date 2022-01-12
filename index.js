@@ -38,6 +38,8 @@ request(req_options, function(error, response, body) {
 				console.log('Error occured while data saving: ', err);
 			else
 				console.log('Data saved.');
+			const used = process.memoryUsage().heapUsed / 1024 / 1024; // https://geshan.com.np/blog/2021/10/nodejs-read-file-line-by-line/
+			console.log(`The script uses approximately ${Math.round(used * 100) / 100} MB`);
 		});
 		console.log('Is request was success (according to Steam Web API):', body_parsed[parameters["appid"]].success);
 		console.log('');
