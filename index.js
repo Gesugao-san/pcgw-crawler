@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const parameters = {
-	appid: 10, // 1162700, 730, 570, 10
+	appid: 1162700, // 1162700, 730, 570, 10
 	l: 'en'
 };
 
