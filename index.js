@@ -64,6 +64,21 @@ request(req_options, function(error, response, body) {
 			console.log('{{}}');
 		};
 		console.log('|taxonomy     = '); // See "categories" and "genres" fields from API
+		var number=0;
+		var string1=("");
+		while (number < body_parsed[parameters["appid"]].data.categories.length){
+			string1=(string1 + " " + body_parsed[parameters["appid"]].data.categories[number].description);
+			number++;
+		}
+
+		console.log('|categories     =', string1);
+		number=0;
+		string1=("");
+		while (number < body_parsed[parameters["appid"]].data.genres.length){
+			string1=(string1 + " " + body_parsed[parameters["appid"]].data.genres[number].description);
+			number++;
+		}
+		console.log('|genres     = ', string1);
 		console.log('{{}}');
 		console.log('|steam appid  =', parameters["appid"]);
 		if (!typeof body_parsed[parameters["appid"]].data.demos in ['undefined', null]) {
