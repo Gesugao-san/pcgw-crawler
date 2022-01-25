@@ -1,0 +1,23 @@
+{
+	"_comment": "Omit values you don't know.",
+	"Steam": {
+		"AppID": "",
+		"AppID Side": ""
+	},
+	"Reception": {
+		"Metacritic": "",
+		"Opencritic": "",
+		"Internet Game Database": ""
+	},
+	"Misc": {
+		"Official website": "",
+		"GOG.com ID": "",
+		"GOG.com ID Side": "",
+		"HowLongToBeat": "",
+		"StrategyWiki": "",
+		"MobyGames": "",
+		"Wikipedia": "",
+		"WineHQ": "",
+		"License": ""
+	}
+}

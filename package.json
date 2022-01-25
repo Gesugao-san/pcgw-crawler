@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Node.js crawler for PCGW.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "node index"
   },
@@ -27,6 +28,7 @@
   "dependencies": {
     "fs": "^0.0.1-security",
     "inquirer": "^8.2.0",
+    "node-fetch": "^3.2.0",
     "request": "^2.88.2"
   }
 }
