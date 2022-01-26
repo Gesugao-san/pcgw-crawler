@@ -1,0 +1,585 @@
+<!-- AUTO GENERATED FROM 'https://www.pcgamingwiki.com/w/index.php?title=PCGamingWiki:Sample_article', DO NOT EDIT! -->
+<!-- 
+Remember to document any changes you make to the sample article here: http://community.pcgamingwiki.com/topic/104-sample-article-modifications/
+This exists for a reason, please use it if you make changes worth noting.
+-->
+'''Quick links to the base templates of PCGamingWiki'''
+* <big>'''<span class="plainlinks">[[PCGamingWiki:Sample article/Game (singleplayer)|Game (singleplayer)]] ([{{fullurl:PCGamingWiki:Sample_article/Game_(singleplayer)|action=edit}} source])</span>'''</big>
+* <big>'''<span class="plainlinks">[[PCGamingWiki:Sample article/Game (multiplayer)|Game (multiplayer)]] ([{{fullurl:PCGamingWiki:Sample_article/Game_(multiplayer)|action=edit}} source])</span>'''</big>
+* <big>'''<span class="plainlinks">[[PCGamingWiki:Sample article/Game (unknown)|Game (unknown)]] ([{{fullurl:PCGamingWiki:Sample_article/Game_(unknown)|action=edit}} source])</span>'''</big>
+* <big>'''<span class="plainlinks">[[PCGamingWiki:Sample_article/Series|Series]] ([{{fullurl:PCGamingWiki:Sample_article/Series|action=edit}} source])</span>'''</big>
+
+'''Instructions'''
+* Code sections can be copied either from the sample articles above, the relevant section of the [[PCGamingWiki:Editing guide|editing guide]], or from the [{{fullurl:PCGamingWiki:Sample_article/Game|action=edit}} source] of this page.
+* The [[Series:Fallout|Fallout series]] of articles is an excellent reference point for example of good articles.
+
+'''Bullet point icons'''
+* The purpose of the bullet point graphics is to provide more brevity and clarity to article content. 
+* All icons automatically indent onto a new line.
+* Virtually all sentences in all game fix pages should use these codes:
+{{ii}} - <code><nowiki>{{ii}}</nowiki></code> - information.
+{{++}} - <code><nowiki>{{++}}</nowiki></code> - positive / advantage / recommend.
+{{--}} - <code><nowiki>{{--}}</nowiki></code> - negative / disadvantage / dissuade.
+
+'''Style crib sheet'''
+{{ii}} Reference where the fixes come from using <nowiki><ref></nowiki> tags and templates {{T|refurl}}, {{T|refcheck}}, {{T|refsnip}}.<ref>{{Refurl|url=https://www.pcgamingwiki.com|title=PCGamingWiki|date=2012-12-21}}</ref>
+{{ii}} All headers and page names should follow the [[PCGamingWiki:Editing guide/Article formatting#Letter case for headers and page names|letter case guidelines]].
+{{ii}} Use the [[PCGamingWiki:Editing guide/Fixboxes and providing instructions|fixbox]] template to boxout fixes and instructions.
+
+
+<span style="font-size:150%">Sample article</span>
+----
+
+{{Infobox game
+|cover        = Game article layout.jpg <!-- Try to find the highest resolution of a PC game cover -->
+|developers   = 
+{{Infobox game/row/developer|Developer}}
+|publishers   = 
+{{Infobox game/row/publisher|Publisher}}
+|engines      = 
+{{Infobox game/row/engine|Engine}}
+|release dates= 
+{{Infobox game/row/date|Windows|Month dd, yyyy}} <!-- (Example: January 3, 2012) -->
+{{Infobox game/row/date|OS X|Month dd, yyyy}}
+{{Infobox game/row/date|Linux|Month dd, yyyy}}
+|reception    =
+{{Infobox game/row/reception|Metacritic|deus-ex-mankind-divided|83}} <!-- (Example: URL section and score - Deus Ex: Mankind Divded) -->
+{{Infobox game/row/reception|Opencritic|1812/deus-ex-mankind-divided|81}}
+{{Infobox game/row/reception|IGDB|deus-ex-mankind-divided|83}}
+|taxonomy     =
+{{Infobox game/row/taxonomy/monetization      | | ref= }}
+{{Infobox game/row/taxonomy/microtransactions | | ref= }}
+{{Infobox game/row/taxonomy/modes             | Singleplayer, Multiplayer }}
+{{Infobox game/row/taxonomy/pacing            | Real-time }}
+{{Infobox game/row/taxonomy/perspectives      | First-person }}
+{{Infobox game/row/taxonomy/controls          | Direct control }}
+{{Infobox game/row/taxonomy/genres            | Action, Shooter }}
+{{Infobox game/row/taxonomy/sports            | }}
+{{Infobox game/row/taxonomy/vehicles          | }}
+{{Infobox game/row/taxonomy/art styles        | Stylized }}
+{{Infobox game/row/taxonomy/themes            | Sci-fi }}
+{{Infobox game/row/taxonomy/series            | PCGW Templates }}
+|steam appid  = 277430
+|steam appid side = 10
+|gogcom id    = 1207658682
+|gogcom id side = 
+|official site= https://example.com/
+|hltb         =
+|igdb         = 
+|strategywiki = 
+|mobygames    = 
+|wikipedia    = PCGamingWiki
+|winehq       = 2
+|license      = 
+}}
+
+{{Introduction
+|introduction      = Introduction paragraph - see [[PCGamingWiki:Editing_guide/Introduction|Introduction guidelines]]. '''''Gamename''''' is a taxonony/perspective/mode/genre etc. featuring key/unique gameplay features made by company published by company. Game is a sequel/prequel in the series or related series or is a spiritual successor. Game uses engine plus any noteworthy engine information compared to other entries in the series. Game is important/noteworthy for any other reason.
+
+|release history   = Game was first released on platform on date. Pre-release information including early access, crowdfunding, closed beta, etc. Platform changes with platform (Steam, EGS, GOG etc.) including delays, technical issues. Launch was successful/had issues with player number milestones if noteworthy. History with a focus on technical issues: e.g. major bugs, inability to access the game, DRM, missing advertised features, features missing from console counterpart, missing endings, etc. and whether any of these problems were fixed.
+
+|current state     = Current major issues that have not been resolved yet. Updates/support is the game regularly updated technically (patches etc.) or content (DLC, expansions, microtransactions or free content updates). Roadmap of future content or features. Multiplayer describe the scene, give an update on number of current players, is it possible for players find games? Modding are there official tools, how are mods distributed. Improvements mentions of essential mods or quality of life improvements, link to anchors further below. Major community additions ONLY INCLUDE if there are major communities outside of 'General information' links such as already linked Steam, GOG, fan forums, e.g. substantial modding communities, Discord communities, alternative servers, hacked multiplayer etc.
+}}
+
+'''General information'''
+{{mm}} [http://forums.sleepingdogs.net/viewforum.php?f=2 Official Forum] - this is a very active official forum
+{{GOG.com links|1207658924|the_witcher}}
+{{mm}} [https://steamcommunity.com/app/00000/discussions/ Steam Community Discussions]
+{{mm}} If still relevant, state where bugs can be reported.
+
+==Availability==
+{{Availability|
+{{Availability/row| Retail | | activation | Example notes: [[SecuROM]] ∞ activations. |  | DOS, Mac OS }}
+{{Availability/row| Amazon.com | B005HRZ29K | ubisoft connect | Example: Amazon. |  | Windows }}
+{{Availability/row| Developer | http://www.soldak.com/Depths-of-Peril/Buy.html | DRM-free | Example: game released directly from website. | Steam | Windows, OS X, Linux }}
+{{Availability/row| GOG.com | legend_of_grimrock | DRM-free | Example: GOG.com. |  | Windows, OS X, Linux }}
+{{Availability/row| Origin | mass-effect-3 | Origin |  |  | Windows }}
+{{Availability/row| Steam | 207170 | Steam | Example: Steam. |  | Windows, OS X, Linux }}
+}}
+
+{{++}} Which is the 'best' version of the game to get? <!-- This cannot be subjective, if you're going to state something factual back it up with relevant sources. -->
+
+===Version differences===
+{{ii}} What are the differences between each edition of the game?
+
+===Demo/free trial===
+{{ii}} Name the header either Demo, Free trial, or  name of the edition, e.g. <nowiki>===Starter Edition===</nowiki>
+{{ii}} If a demo exists, break down the limitations.
+{{ii}} Do progress/achievements carry over to the main game?
+
+==Monetization==
+{{Monetization
+|ad-supported        = Ad-supported
+|dlc                 = DLC
+|expansion pack      = Expansion pack
+|freeware            = Freeware
+|free-to-play        = Free-to-play
+|sponsored           = Sponsored
+|subscription        = Subscription
+}}
+
+{{DLC|
+{{DLC/row| Some DLC name | Example: Only available in Japan. | Windows}}
+{{DLC/row| Some other DLC | | Windows, Linux}}
+}}
+
+===Microtransactions===
+{{Microtransactions
+|boost               = Boost
+|cosmetic            = Cosmetic
+|currency            = Currency
+|finite spend        = Finite spend
+|infinite spend      = Infinite spend
+|free-to-grind       = Free-to-grind
+|loot box            = Loot box
+|none                = None
+|player trading      = Player trading
+|time-limited        = Time-limited
+|unlock              = Unlock
+}}
+
+==Essential improvements==
+{{ii}} One can use subheaders as below, or simply list individual improvements as 3rd level headers.
+
+===Patches===
+'''Include If'''
+{{ii}} There is a benefit in using an older patch. For example, [[Diablo II]]'s latest patch is 1.13, but the high-res mod only supports 1.12.
+{{ii}} There is a community or fan patch which is superior to the latest developer patch.
+{{Fixbox|description=Patch install instructions|fix=
+How to apply this complex patch installation.
+}}
+
+===Utilities===
+{{ii}} Very important launchers, reputable save game editors, etc.
+
+===Modifications===
+{{ii}} List mods that are very important and would be detrimental if played without the mod, e.g. [[Dark_Souls:_Prepare_to_Die_Edition#DSfix_by_Durante|DSFix]], [[Star_Wars:_Knights_of_the_Old_Republic_II_–_The_Sith_Lords#The_Sith_Lords_Restored_Content_Mod_.28TSLRCM.29|TSLRCM]]. Balance mods and aesthetic mods can also be included if they are stable, mature and popular.
+
+==Game data==
+{{ii}} ''(Linux only)'' State whether XDG is being followed (partially, completely, not at all)
+===Configuration file(s) location===
+{{Game data|
+{{Game data/config|Windows|{{p|appdata}}\Vessel\}}
+{{Game data/config|OS X|~/Library/Application Support/Vessel/}}
+{{Game data/config|Linux|~/.config/Vessel/}} 
+}}
+{{XDG|true}}
+
+===Save game data location===
+{{Game data|
+{{Game data/saves|Windows|{{p|appdata}}\.minecraft\saves}}
+{{Game data/saves|OS X|~/Library/Application Support/minecraft/saves}}
+{{Game data/saves|Linux|~/.minecraft/saves}}
+}}
+
+===[[Glossary:Save game cloud syncing|Save game cloud syncing]]===
+{{Save game cloud syncing
+|discord                   = 
+|discord notes             = 
+|epic games launcher       = 
+|epic games launcher notes = 
+|gog galaxy                = unknown
+|gog galaxy notes          = 
+|origin                    = false
+|origin notes              = 
+|steam cloud               = true
+|steam cloud notes         = Syncs save games and settings.
+|ubisoft connect           = unknown
+|ubisoft connect notes     = 
+|xbox cloud                = 
+|xbox cloud notes          = 
+}}
+
+==Video==
+{{Video
+|wsgf link                  = http://www.wsgf.org/dr/dmc-devil-may-cry/en
+|widescreen wsgf award      = gold
+|multimonitor wsgf award    = silver
+|ultrawidescreen wsgf award = limited
+|4k ultra hd wsgf award     = unsupported
+|widescreen resolution      = true
+|widescreen resolution notes= See [[#Widescreen resolution|Widescreen resolution]].
+|multimonitor               = hackable
+|multimonitor notes         = See [[#Multi-monitor|Multi-monitor]]. 
+|ultrawidescreen            = false
+|ultrawidescreen notes      = See [[#Ultra-widescreen|Ultra-widescreen]]. 
+|4k ultra hd                = false
+|4k ultra hd notes          = See [[#4K Ultra HD|4K Ultra HD]].
+|fov                        = true
+|fov notes                  = See [[#Field of view (FOV)|Field of view (FOV)]].
+|windowed                   = true
+|windowed notes             = See [[#Windowed|Windowed]].
+|borderless windowed        = true
+|borderless windowed notes  = See [[#Borderless fullscreen windowed|Borderless fullscreen windowed]].
+|anisotropic                = true
+|anisotropic notes          = See [[#Anisotropic filtering (AF)|Anisotropic filtering (AF)]].
+|antialiasing               = true
+|antialiasing notes         = See [[#Anti-aliasing (AA)|Anti-aliasing (AA)]].
+|vsync                      = true
+|vsync notes                = See [[#Vertical sync (Vsync)|Vertical sync (Vsync)]].
+|60 fps                     = true
+|60 fps notes               = 
+|120 fps                    = false
+|120 fps notes              = 
+|hdr                        = false
+|hdr notes                  =
+|ray tracing                = limited
+|ray tracing notes          = Only on Nvidia hardware.
+|color blind                = true
+|color blind notes          = See [[#Color blind mode|Color blind mode]].
+}}
+
+===[[Glossary:Widescreen resolution|Widescreen resolution]]===
+===[[Glossary:Multi-monitor|Multi-monitor]]===
+===[[Glossary:Ultra-widescreen|Ultra-widescreen]]===
+===[[Glossary:4K Ultra HD|4K Ultra HD]]===
+===[[Glossary:Field of view (FOV)|Field of view (FOV)]]===
+===[[Glossary:Windowed|Windowed]]===
+===[[Glossary:Borderless fullscreen windowed|Borderless fullscreen windowed]]===
+===[[Glossary:Anisotropic filtering (AF)|Anisotropic filtering (AF)]]===
+===[[Glossary:Anti-aliasing (AA)|Anti-aliasing (AA)]]===
+===[[Glossary:Vertical sync (Vsync)|Vertical sync (Vsync)]]===
+===[[Glossary:Color blind mode|Color blind mode]]===
+{{ii}} Delete unnecessary headers and links.
+
+==Input==
+{{Input
+|key remap                 = unknown
+|key remap notes           = See [[#Remapping|Remapping]].
+|acceleration option       = hackable
+|acceleration option notes = See [[#Mouse acceleration|Mouse acceleration]].
+|mouse sensitivity         = unknown
+|mouse sensitivity notes   = 
+|mouse menu                = false
+|mouse menu notes          = 
+|invert mouse y-axis       = true
+|invert mouse y-axis notes = 
+|touchscreen               = true
+|touchscreen notes         = See [[#Touchscreen|Touchscreen]].
+|controller support        = true
+|controller support notes  = See [[#Controller support|Controller support]].
+|full controller           = false
+|full controller notes     = 
+|controller remap          = false
+|controller remap notes    = See [[#Controller remapping|Controller remapping]].
+|controller sensitivity    = unknown
+|controller sensitivity notes= 
+|invert controller y-axis  = true
+|invert controller y-axis notes= 
+|xinput controllers        = true
+|xinput controllers notes  = 
+|xbox prompts              = true
+|xbox prompts notes        = 
+|impulse triggers          = false
+|impulse triggers notes    = Xbox One only.
+|dualshock 4               = true
+|dualshock 4 notes         = 
+|dualshock prompts         = true
+|dualshock prompts notes   = 
+|light bar support         = false
+|light bar support notes   = 
+|dualshock 4 modes         = USB
+|dualshock 4 modes notes   = 
+|tracked motion controllers= true
+|tracked motion controllers notes = 
+|tracked motion prompts    = false
+|tracked motion prompts notes = 
+|other controllers         = true
+|other controllers notes   = 
+|other button prompts      = Generic, Nintendo
+|other button prompts notes= 
+|controller hotplug        = false
+|controller hotplug notes  = 
+|haptic feedback           = false
+|haptic feedback notes     = 
+|simultaneous input        = true
+|simultaneous input notes  = 
+|steam input api           = false
+|steam input api notes     = 
+|steam hook input          = unknown
+|steam hook input notes    = 
+|steam input presets       = true
+|steam input presets notes = 
+|steam controller prompts  = unknown
+|steam controller prompts notes = 
+|steam cursor detection    = unknown
+|steam cursor detection notes = 
+}}
+
+===[[Glossary:Remapping|Remapping]]===
+===[[Glossary:Mouse acceleration|Mouse acceleration]]===
+===[[Controller|Controller support]]===
+===[[Glossary:Remapping|Controller remapping]]===
+===[[Glossary:Touchscreen|Touchscreen]]===
+{{ii}} Delete unnecessary headers and links.
+
+==Audio==
+{{Audio
+|separate volume           = true
+|separate volume notes     = 
+|surround sound            = false
+|surround sound notes      = 
+|subtitles                 = true
+|subtitles notes           = 
+|closed captions           = false
+|closed captions notes     = 
+|mute on focus lost        = false
+|mute on focus lost notes  = 
+|eax support               = 
+|eax support notes         = 
+|red book cd audio         = true
+|red book cd audio notes   = 
+|general midi audio        = true
+|general midi audio notes  = This game supports General MIDI for music.
+}}
+
+{{L10n|content=
+{{L10n/switch
+ |language  = English
+ |interface = true
+ |audio     = true
+ |subtitles = n/a
+ |notes     = 
+}}
+{{L10n/switch
+ |language  = French
+ |interface = true
+ |audio     = true
+ |subtitles = n/a
+ |notes     = 
+}}
+{{L10n/switch
+ |language  = German
+ |interface = true
+ |audio     = false
+ |subtitles = n/a
+ |notes     = 
+}}
+{{L10n/switch
+ |language  = Italian
+ |interface = true
+ |audio     = false
+ |subtitles = n/a
+ |notes     = 
+}}
+{{L10n/switch
+ |language  = Spanish
+ |interface = true
+ |audio     = false
+ |subtitles = n/a
+ |notes     = Download from [http://example.org here].
+ |fan       = true
+}}
+}}
+
+==Network==
+{{ii}} Do not include this section in games without Multiplayer modes.
+
+{{Network/Multiplayer
+|local play           = true
+|local play players   = 2
+|local play modes     = 
+|local play notes     = 
+|lan play             = false
+|lan play players     = 
+|lan play modes       = 
+|lan play notes       = 
+|online play          = true
+|online play players  = 
+|online play modes    = 
+|online play notes    = 
+|asynchronous         = true
+|asynchronous notes   = 
+}}
+
+{{Network/Connections
+|matchmaking        = false
+|matchmaking notes  = 
+|p2p                = true
+|p2p notes          = 
+|dedicated          = false
+|dedicated notes    = 
+|self-hosting       = false
+|self-hosting notes = 
+|direct ip          = false
+|direct ip notes    = 
+}}
+
+{{Network/Ports
+|tcp  = 1, 2, 30
+|udp  = 500-600, 3500
+|upnp = unknown
+}}
+
+==VR support==
+{{VR support
+|native 3d                   = true
+|native 3d notes             = 
+|nvidia 3d vision            = unknown
+|nvidia 3d vision notes      = 
+|vorpx                       = 
+|vorpx modes                 = 
+|vorpx notes                 = 
+|vr only                     = true
+|htc vive                    = false
+|htc vive notes              = 
+|oculus rift                 = true
+|oculus rift notes           = 
+|osvr                        = unknown
+|osvr notes                  = 
+|windows mixed reality       = false
+|windows mixed reality notes = 
+|keyboard-mouse              = unknown
+|keyboard-mouse notes        = 
+|3rd space gaming vest       = true
+|3rd space gaming vest notes = 
+|novint falcon               = false
+|novint falcon notes         = 
+|trackir                     = true
+|trackir notes               = 
+|tobii eye tracking          = true
+|tobii eye tracking notes    = 
+|play area seated            = true
+|play area seated notes      = 
+|play area standing          = hackable
+|play area standing notes    = Use the [http://example.org Head Height] mod.
+|play area room-scale        = true
+|play area room-scale notes  = 
+}}
+
+==Issues unresolved==
+===Issue===
+===Issue===
+
+==Issues fixed==
+===Issue===
+{{Fixbox|description=Fixbox header here|fix=
+How to apply this fix.
+}}
+===Issue===
+
+==Other information==
+Miscellaneous information, e.g.:
+* Visual enhancements.
+* Enabling minor performance increases.
+* Useful, but not essential utilities.
+
+===API===
+{{API
+|direct3d versions      = 9, 11
+|direct3d notes         = Windows only.
+|directdraw versions    = 
+|directdraw notes       = 
+|wing                   = 
+|wing notes             = 
+|opengl versions        = 3.3, 4
+|opengl notes           = OS X and Linux only.
+|glide versions         = 
+|glide notes            = 
+|software mode          = 
+|software mode notes    = 
+|mantle support         = 
+|mantle support notes   = 
+|metal support          = true
+|metal support notes    = 
+|vulkan versions        = unknown
+|vulkan notes           = 
+|dos modes              = 
+|dos modes notes        = 
+|shader model versions  = 
+|shader model notes     = 
+|windows 32-bit exe     = true
+|windows 64-bit exe     = false
+|windows arm app        = unknown
+|windows exe notes      = 
+|mac os x powerpc app   = 
+|macos intel 32-bit app = true
+|macos intel 64-bit app = false
+|macos arm app          = true
+|macos app notes        = ARM support was added in November 2020.
+|linux powerpc app      = 
+|linux 32-bit executable= true
+|linux 64-bit executable= true
+|linux arm app          = unknown
+|linux executable notes = 
+}}
+
+===Middleware===
+{{Middleware
+|physics          = PhysX
+|physics notes    = Lacks GPU acceleration on Linux.
+|audio            = FMOD
+|audio notes      = 
+|interface        = Scaleform
+|interface notes  = 
+|input            = 
+|input notes      = 
+|cutscenes        = Bink
+|cutscenes notes  = 
+|multiplayer      = Steamworks
+|multiplayer notes= 
+|anticheat        = 
+|anticheat notes  = 
+}}
+
+===Console commands===
+
+==System requirements==
+{{ii}} Avoid adding any prefixes and suffixes* to the OS parameter such as "'''Windows''' 7", "'''OS X Lion''' 10.7" and "7 '''64-bit'''". These do not apply to Linux as many distros are available. *For windows, service packs are the only suffix permitted.
+{{ii}} 64/32-bit only/recommended mention is noted in the notes parameter as a point.
+{{ii}} The separator for more than one operating system is a comma (,) - nothing else.
+{{System requirements
+|OSfamily = Windows
+
+|minOS    = XP, Vista, 7
+|minCPU   = Dual Core 2.0 GHz or Athlon 64 X2 Dual Core 5400+
+|minRAM   = 2 GB
+|minHD    = 8 GB 
+|minGPU   = Nvidia GeForce 8600 GTS
+|minVRAM  = 512 MB
+
+|recOS    = 7
+|recCPU   = Quad core Intel or AMD Phenom 9850 Quad-Core
+|recRAM   = 4 GB
+|recHD    = 
+|recGPU   = Nvidia GeForce GTX 285
+|notes    = 
+}}
+
+{{System requirements
+|OSfamily = OS X
+
+|minOS    = 10.5.2
+|minCPU   = Dual Core 2.0 GHz or Athlon 64 X2 Dual Core 5400+
+|minRAM   = 2 GB
+|minHD    = 8 GB
+|minGPU   = Nvidia GeForce 8600 GTS
+|minVRAM  = 512 MB
+
+|recOS    = 10.6.4
+|recCPU   = Quad core Intel or AMD Phenom 9850 Quad-Core
+|recRAM   = 4 GB
+|recHD    = 
+|recGPU   = Nvidia GeForce GTX 285
+|notes    = 
+}}
+
+{{System requirements
+|OSfamily = Linux
+
+|minOS    = Kernel 3.0
+|minCPU   = Dual Core 2.0 GHz or Athlon 64 X2 Dual Core 5400+
+|minRAM   = 2 GB
+|minHD    = 8 GB 
+|minGPU   = Nvidia GeForce 8600 GTS
+|minVRAM  = 512 MB
+
+|recOS    = Kernel 3.2
+|recCPU   = Quad core Intel or AMD Phenom 9850 Quad-Core
+|recRAM   = 4 GB
+|recHD    =  
+|recGPU   = Nvidia GeForce GTX 285
+|notes    = 
+}}
+
+{{References}}

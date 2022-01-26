@@ -52,4 +52,5 @@ console.log(1);
 	console.log(4); //3
 })();
 
+// WHY
 console.log(3); //4

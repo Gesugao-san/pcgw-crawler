@@ -1,0 +1,330 @@
+<!-- AUTO GENERATED FROM 'https://www.pcgamingwiki.com/w/index.php?title=PCGamingWiki:Sample_article', DO NOT EDIT! -->
+{{stub}}
+{{Infobox game
+|cover        = GAME TITLE cover.jpg
+|developers   = 
+{{Infobox game/row/developer|DEVELOPER}}
+|publishers   = 
+{{Infobox game/row/publisher|PUBLISHER}}
+|engines      = 
+|release dates= 
+{{Infobox game/row/date|Windows|TBA}}
+|reception    = 
+{{Infobox game/row/reception|Metacritic|link|rating}}
+{{Infobox game/row/reception|OpenCritic|link|rating}}
+{{Infobox game/row/reception|IGDB|link|rating}}
+|taxonomy     =
+{{Infobox game/row/taxonomy/monetization      | }}
+{{Infobox game/row/taxonomy/microtransactions | }}
+{{Infobox game/row/taxonomy/modes             | Multiplayer }}
+{{Infobox game/row/taxonomy/pacing            | }}
+{{Infobox game/row/taxonomy/perspectives      | }}
+{{Infobox game/row/taxonomy/controls          | }}
+{{Infobox game/row/taxonomy/genres            | }}
+{{Infobox game/row/taxonomy/sports            | }}
+{{Infobox game/row/taxonomy/vehicles          | }}
+{{Infobox game/row/taxonomy/art styles        | }}
+{{Infobox game/row/taxonomy/themes            | }}
+{{Infobox game/row/taxonomy/series            | PCGW Templates<!-- CHANGE TO THE ACTUAL SERIES NAME IF ONE EXISTS --> }}
+|steam appid  = 
+|steam appid side = 
+|gogcom id    = 
+|gogcom id side = 
+|official site= 
+|hltb         = 
+|igdb         = <!-- Only needs to be set if there is no IGDB reception row -->
+|mobygames    = 
+|strategywiki = 
+|wikipedia    = 
+|winehq       = 
+|license      = commercial
+}}
+
+{{Introduction
+|introduction      = 
+
+|release history   = 
+
+|current state     =
+}}
+
+==Availability==
+{{Availability|
+{{Availability/row| retail | | unknown |  |  | Windows }}
+}}
+
+==Game data==
+===Configuration file(s) location===
+{{Game data|
+{{Game data/config|Windows|}}
+}}
+
+===Save game data location===
+{{Game data|
+{{Game data/saves|Windows|}}
+}}
+
+===[[Glossary:Save game cloud syncing|Save game cloud syncing]]===
+{{Save game cloud syncing
+|discord                   = 
+|discord notes             = 
+|epic games launcher       = 
+|epic games launcher notes = 
+|gog galaxy                = 
+|gog galaxy notes          = 
+|origin                    = 
+|origin notes              = 
+|steam cloud               = 
+|steam cloud notes         = 
+|ubisoft connect           = 
+|ubisoft connect notes     = 
+|xbox cloud                = 
+|xbox cloud notes          = 
+}}
+
+==Video==
+{{Video
+|wsgf link                  = 
+|widescreen wsgf award      = 
+|multimonitor wsgf award    = 
+|ultrawidescreen wsgf award = 
+|4k ultra hd wsgf award     = 
+|widescreen resolution      = unknown
+|widescreen resolution notes= 
+|multimonitor               = unknown
+|multimonitor notes         = 
+|ultrawidescreen            = unknown
+|ultrawidescreen notes      = 
+|4k ultra hd                = unknown
+|4k ultra hd notes          = 
+|fov                        = unknown
+|fov notes                  = 
+|windowed                   = unknown
+|windowed notes             = 
+|borderless windowed        = unknown
+|borderless windowed notes  = 
+|anisotropic                = unknown
+|anisotropic notes          = 
+|antialiasing               = unknown
+|antialiasing notes         = 
+|vsync                      = unknown
+|vsync notes                = 
+|60 fps                     = unknown
+|60 fps notes               = 
+|120 fps                    = unknown
+|120 fps notes              = 
+|hdr                        = unknown
+|hdr notes                  = 
+|ray tracing                = unknown
+|ray tracing notes          = 
+|color blind                = unknown
+|color blind notes          = 
+}}
+
+==Input==
+{{Input
+|key remap                 = unknown
+|key remap notes           = 
+|acceleration option       = unknown
+|acceleration option notes = 
+|mouse sensitivity         = unknown
+|mouse sensitivity notes   = 
+|mouse menu                = unknown
+|mouse menu notes          = 
+|invert mouse y-axis       = unknown
+|invert mouse y-axis notes = 
+|touchscreen               = unknown
+|touchscreen notes         = 
+|controller support        = unknown
+|controller support notes  = 
+|full controller           = unknown
+|full controller notes     = 
+|controller remap          = unknown
+|controller remap notes    = 
+|controller sensitivity    = unknown
+|controller sensitivity notes= 
+|invert controller y-axis  = unknown
+|invert controller y-axis notes= 
+|xinput controllers        = unknown
+|xinput controllers notes  = 
+|xbox prompts              = unknown
+|xbox prompts notes        = 
+|impulse triggers          = unknown
+|impulse triggers notes    = 
+|dualshock 4               = unknown
+|dualshock 4 notes         = 
+|dualshock prompts         = unknown
+|dualshock prompts notes   = 
+|light bar support         = unknown
+|light bar support notes   = 
+|dualshock 4 modes         = unknown
+|dualshock 4 modes notes   = 
+|tracked motion controllers= unknown
+|tracked motion controllers notes = 
+|tracked motion prompts    = unknown
+|tracked motion prompts notes = 
+|other controllers         = unknown
+|other controllers notes   = 
+|other button prompts      = unknown
+|other button prompts notes= 
+|controller hotplug        = unknown
+|controller hotplug notes  = 
+|haptic feedback           = unknown
+|haptic feedback notes     = 
+|simultaneous input        = unknown
+|simultaneous input notes  = 
+|steam input api           = unknown
+|steam input api notes     = 
+|steam hook input          = unknown
+|steam hook input notes    = 
+|steam input presets       = unknown
+|steam input presets notes = 
+|steam controller prompts  = unknown
+|steam controller prompts notes = 
+|steam cursor detection    = unknown
+|steam cursor detection notes = 
+}}
+
+==Audio==
+{{Audio
+|separate volume           = unknown
+|separate volume notes     = 
+|surround sound            = unknown
+|surround sound notes      = 
+|subtitles                 = unknown
+|subtitles notes           = 
+|closed captions           = unknown
+|closed captions notes     = 
+|mute on focus lost        = unknown
+|mute on focus lost notes  = 
+|eax support               = 
+|eax support notes         = 
+|red book cd audio         = 
+|red book cd audio notes   = 
+|general midi audio        = 
+|general midi audio notes  = 
+}}
+
+{{L10n|content=
+{{L10n/switch
+ |language  = English
+ |interface = true
+ |audio     = unknown
+ |subtitles = unknown
+ |notes     = 
+ |fan       = 
+ |ref       = 
+}}
+}}
+
+==Network==
+{{Network/Multiplayer
+|local play           = unknown
+|local play players   = 
+|local play modes     = 
+|local play notes     = 
+|lan play             = unknown
+|lan play players     = 
+|lan play modes       = 
+|lan play notes       = 
+|online play          = unknown
+|online play players  = 
+|online play modes    = 
+|online play notes    = 
+|asynchronous         = 
+|asynchronous notes   = 
+}}{{Network/Connections
+|matchmaking        = 
+|matchmaking notes  = 
+|p2p                = 
+|p2p notes          = 
+|dedicated          = 
+|dedicated notes    = 
+|self-hosting       = 
+|self-hosting notes = 
+|direct ip          = 
+|direct ip notes    = 
+}}{{Network/Ports
+|tcp  = 
+|udp  = 
+|upnp = 
+}}
+
+==Other information==
+===API===
+{{API
+|direct3d versions      = 
+|direct3d notes         = 
+|directdraw versions    = 
+|directdraw notes       = 
+|wing                   = 
+|wing notes             = 
+|opengl versions        = 
+|opengl notes           = 
+|glide versions         = 
+|glide notes            = 
+|software mode          = 
+|software mode notes    = 
+|mantle support         = 
+|mantle support notes   = 
+|metal support          = 
+|metal support notes    = 
+|vulkan versions        = 
+|vulkan notes           = 
+|dos modes              = 
+|dos modes notes        = 
+|shader model versions  = 
+|shader model notes     = 
+|windows 32-bit exe     = unknown
+|windows 64-bit exe     = unknown
+|windows arm app        = unknown
+|windows exe notes      = 
+|mac os x powerpc app   = 
+|macos intel 32-bit app = unknown
+|macos intel 64-bit app = unknown
+|macos arm app          = unknown
+|macos app notes        = 
+|linux powerpc app      = 
+|linux 32-bit executable= unknown
+|linux 64-bit executable= unknown
+|linux arm app          = unknown
+|linux executable notes = 
+}}
+
+===Middleware===
+{{Middleware
+|physics          = 
+|physics notes    = 
+|audio            = 
+|audio notes      = 
+|interface        = 
+|interface notes  = 
+|input            = 
+|input notes      = 
+|cutscenes        = 
+|cutscenes notes  = 
+|multiplayer      = 
+|multiplayer notes= 
+|anticheat        = 
+|anticheat notes  = 
+}}
+
+==System requirements==
+{{System requirements
+|OSfamily = Windows
+
+|minOS    = 
+|minCPU   = 
+|minRAM   = 
+|minHD    = 
+|minGPU   = 
+
+|recOS    = 
+|recCPU   = 
+|recRAM   = 
+|recHD    = 
+|recGPU   = 
+|notes    = 
+}}
+
+{{References}}

@@ -5,9 +5,13 @@ const fs = require('fs');
 //import fetch from 'node-fetch';
 const request = require('request');
 
+const parameters = {
+	appid: 1162700, // 1162700, 730, 570, 10
+	l: 'en'
+};
 
 const req_options = {
-	uri: 'http://store.steampowered.com/api/appdetails/?appids=10&l=en&format=json',
+	uri: 'http://store.steampowered.com/api/appdetails/?appids=' + parameters["appid"] + '&l=en&format=json',
 	port: 80,
 	method: 'GET',
     headers: {
@@ -42,28 +46,83 @@ async function getAndCacheDataFromSteamAPI(params) {
 }
 /* function generateInfobox() {} */ /* populateInfobox */
 
-function getData() {
-	return request.get('http://store.steampowered.com/api/appdetails/?appids=10&l=en&format=json', function (error, response, body) { //1
-		if (!error && response.statusCode == 200) {
-			var data = "data:"
-			+ response.headers["content-type"]
-			+ ";base64,"
-			+ new Buffer.from(body).toString('base64');
-			return data
-			//return JSON.parse(body);
-		}
+
+// https://usefulangle.com/post/170/nodejs-synchronous-http-request
+const https = require('https');
+
+// function returns a Promise
+function getPromise() {
+	return new Promise((resolve, reject) => {
+		https.get('https://store.steampowered.com/api/appdetails/?appids=10&l=en&format=json', (response) => {
+			let chunks_of_data = [];
+
+			response.on('data', (fragments) => {
+				chunks_of_data.push(fragments);
+			});
+
+			response.on('end', () => {
+				let response_body = Buffer.concat(chunks_of_data);
+				resolve(response_body.toString());
+			});
+
+			response.on('error', (error) => {
+				reject(error);
+			});
+		});
 	});
 }
 
-async function main() {
-	console.log("1");
-	var myData = await getData();
-	console.log(myData);
-	console.log("2");
+// async function to make http request
+function saveFile(response_body) {
+	try {
+		let body_parsed = JSON.parse(response_body);
+		console.log('Data received:\n', body_parsed);
+		console.log('Data saving in progress...');
+		fs.writeFile('./cache/SteamAPI/' + parameters["appid"] + '.json', JSON.stringify(body_parsed, null, 4), function(err, result) {
+			if (err)
+				console.log('Error occured while data saving: ', err);
+			else
+				console.log('Data saved.');
+		});
+	}
+	catch(error) {
+		// Promise rejected
+		console.log(error);
+	}
+}
+// async function to make http request
+async function makeSynchronousRequest(request) {
+	try {
+		let http_promise = getPromise();
+		let response_body = await http_promise;
+
+		// holds response from server that is passed when Promise is resolved
+		// console.log(response_body);
+		saveFile(response_body);
+	}
+	catch(error) {
+		// Promise rejected
+		console.log(error);
+	}
 }
 
+console.log(1);
 
+// anonymous async function to execute some code synchronously after http request
+(async function () {
+	console.log(2);
+	// wait to http request to finish
+	await makeSynchronousRequest();
 
-generateWarningForPCGW();
-//getAndCacheDataFromSteamAPI();
-main();
+	// below code will be executed after http request is finished
+	//  ^-- NO
+	console.log(4); //3
+
+	generateWarningForPCGW();
+
+	const used = process.memoryUsage().heapUsed / 1024 / 1024;
+	console.log(`The script uses approximately ${Math.round(used * 100) / 100} MB`);
+})();
+
+// WHY
+console.log(3); //4

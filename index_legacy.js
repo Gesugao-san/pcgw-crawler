@@ -33,7 +33,7 @@ request(req_options, function(error, response, body) {
 		body_parsed = JSON.parse(body);
 		console.log('Data received:\n', body_parsed);
 		console.log('Data saving in progress...');
-		fs.writeFile('./cache/' + parameters["appid"] + '.json', JSON.stringify(body_parsed, null, 2), function(err, result) {
+		fs.writeFile('./cache/' + parameters["appid"] + '.json', JSON.stringify(body_parsed, null, 4), function(err, result) {
 			if (err)
 				console.log('Error occured while data saving: ', err);
 			else
