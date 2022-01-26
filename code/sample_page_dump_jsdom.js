@@ -62,4 +62,7 @@ async function makeSynchronousRequest(_url, _file) {
 	await makeSynchronousRequest(base_url + '/Game_(unknown)&action=edit',      '3. Game (unknown)');
 	await makeSynchronousRequest(base_url + '/Series&action=edit',              '4. Series');
 	await makeSynchronousRequest(base_url + '&action=edit',                     '5. Sample article');
+	// ToDo: "query.pages["2613"].revisions[0]["*"]"
+	// https://www.pcgamingwiki.com/w/api.php?action=query&redirects=true&prop=revisions&
+	// rvprop=content&maxlag=5&format=json&origin=*&titles=PCGamingWiki:Sample_article
 })();

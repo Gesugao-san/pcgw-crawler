@@ -1,0 +1,24 @@
+[
+  Infobox$1 { _type: 'game', domain: null },
+  Infobox$1 { _type: 'game/row/developer', domain: null },
+  Infobox$1 { _type: 'game/row/publisher', domain: null },
+  Infobox$1 { _type: 'game/row/date', domain: null },
+  Infobox$1 { _type: 'game/row/reception', domain: null },
+  Infobox$1 { _type: 'game/row/reception', domain: null },
+  Infobox$1 { _type: 'game/row/reception', domain: null },
+  Infobox$1 { _type: 'game/row/taxonomy/monetization', domain: null },
+  Infobox$1 {
+    _type: 'game/row/taxonomy/microtransactions',
+    domain: null
+  },
+  Infobox$1 { _type: 'game/row/taxonomy/modes', domain: null },
+  Infobox$1 { _type: 'game/row/taxonomy/pacing', domain: null },
+  Infobox$1 { _type: 'game/row/taxonomy/perspectives', domain: null },
+  Infobox$1 { _type: 'game/row/taxonomy/controls', domain: null },
+  Infobox$1 { _type: 'game/row/taxonomy/genres', domain: null },
+  Infobox$1 { _type: 'game/row/taxonomy/sports', domain: null },
+  Infobox$1 { _type: 'game/row/taxonomy/vehicles', domain: null },
+  Infobox$1 { _type: 'game/row/taxonomy/art styles', domain: null },
+  Infobox$1 { _type: 'game/row/taxonomy/themes', domain: null },
+  Infobox$1 { _type: 'game/row/taxonomy/series', domain: null }
+]
