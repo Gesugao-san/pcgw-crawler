@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Node.js crawler for PCGW.",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "node index"
   },
