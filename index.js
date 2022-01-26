@@ -39,17 +39,11 @@ function generateWarningForPCGW() {
 	//console.log(generate_state);
 }
 
-async function getAndCacheDataFromSteamAPI(params) {
-	const response = await fetch('http://store.steampowered.com/api/appdetails/?appids=10&l=en&format=json');
-	const data = await response.json();
-	console.log(data);
-}
-/* function generateInfobox() {} */ /* populateInfobox */
-
-
 // https://usefulangle.com/post/170/nodejs-synchronous-http-request
 const https = require('https');
+/* function generateInfobox() {} */ /* populateInfobox */
 
+// getAndCacheDataFromSteamAPI
 // function returns a Promise
 function getPromise() {
 	return new Promise((resolve, reject) => {
@@ -91,7 +85,7 @@ function saveFile(response_body) {
 	}
 }
 // async function to make http request
-async function makeSynchronousRequest(request) {
+async function makeSynchronousRequest() {
 	try {
 		let http_promise = getPromise();
 		let response_body = await http_promise;
