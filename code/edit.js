@@ -22,13 +22,19 @@ function getLoginToken() {
 		format: 'json'
 	};
 
+	console.log("Starting program.");
+	console.log("Getting new login token...");
 	request.get( { url: url, qs: params }, function ( error, res, body ) {
-		var data;
+		var data, logintoken;
 		if ( error ) {
+			console.log(error);
 			return;
 		}
 		data = JSON.parse( body );
-		loginRequest( data.query.tokens.logintoken );
+		logintoken = data.query.tokens.logintoken;
+		data.query.tokens.logintoken = "[CENSORED]";
+		console.log(JSON.stringify(data));
+		loginRequest( logintoken );
 	} );
 }
 
@@ -46,8 +52,10 @@ function loginRequest(login_token) {
         format: "json"
     };
 
+    console.log("Making login request...");
     request.post({ url: url, form: params_1 }, function (error, res, body) {
         if (error) {
+            console.log(error);
             return;
         }
         getCsrfToken();
@@ -62,8 +70,10 @@ function getCsrfToken() {
         format: "json"
     };
 
+    console.log("Getting new CSRF token for edits...");
     request.get({ url: url, qs: params_2 }, function(error, res, body) {
         if (error) {
+            console.log(error);
             return;
         }
         var data = JSON.parse(body);
@@ -76,17 +86,21 @@ function editRequest(csrf_token) {
     var params_3 = {
         action: "edit",
         title: "Sandbox",
-        appendtext: "test edit",
+        appendtext: "\n<br>This is test text added by bot a bot in automatic mode, yey.",
+        summary: "Edited by a bot in automatic mode.",
+        bot: true,
         token: csrf_token,
         format: "json"
     };
 
+    console.log("Making edit request...");
     request.post({ url: url, form: params_3 }, function (error, res, body) {
         if (error) {
+            console.log(error);
             return;
         }
-        console.log(body);
     });
+    console.log("Ending program.");
 }
 
 // Start From Step 1
