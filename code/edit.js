@@ -13,6 +13,25 @@ var request = require( 'request' ).defaults( { jar: true } ),
 	//url = 'https://test.wikipedia.org/w/api.php';
 	url = 'https://www.pcgamingwiki.com/w/api.php';
 
+function checkToken(_type, _token) {
+	var params_0 = {
+		action: "checktoken",
+		type: _type,
+		token: _token,
+		format: "json"
+	};
+
+	console.log("Checking token (" + _type + ")...");
+	request.get({ url: url, qs: params_0 }, function(error, res, body) {
+		if (error) {
+			console.log(error);
+			return;
+		}
+		console.log(JSON.parse(body));
+		return;
+	});
+}
+
 // Step 1: GET request to fetch login token
 function getLoginToken() {
 	var params = {
@@ -34,7 +53,8 @@ function getLoginToken() {
 		logintoken = data.query.tokens.logintoken;
 		data.query.tokens.logintoken = "[CENSORED]";
 		console.log(JSON.stringify(data));
-		loginRequest( logintoken );
+		checkToken("login", logintoken);
+		loginRequest(logintoken);
 	} );
 }
 
@@ -46,7 +66,7 @@ function getLoginToken() {
 function loginRequest(login_token) {
     var params_1 = {
         action: "login",
-        lgname: "bot_username",
+        lgname: "username@botname",
         lgpassword: "bot_password",
         lgtoken: login_token,
         format: "json"
@@ -57,6 +77,11 @@ function loginRequest(login_token) {
         if (error) {
             console.log(error);
             return;
+        }
+        data = JSON.parse(body);
+        console.log(JSON.stringify(data));
+        if (data.login.result != "Success") { // "Failed"
+            console.log("Credentials incorrect, errors possible!"); // "Logging error (check credentials), aborting!"
         }
         getCsrfToken();
     });
@@ -77,6 +102,7 @@ function getCsrfToken() {
             return;
         }
         var data = JSON.parse(body);
+        checkToken("csrf", data.query.tokens.csrftoken);
         editRequest(data.query.tokens.csrftoken);
     });
 }
@@ -85,7 +111,7 @@ function getCsrfToken() {
 function editRequest(csrf_token) {
     var params_3 = {
         action: "edit",
-        title: "Sandbox",
+        title: "User:Gesugao-san",
         appendtext: "\n<br>This is test text added by bot a bot in automatic mode, yey.",
         summary: "Edited by a bot in automatic mode.",
         bot: true,
@@ -100,8 +126,28 @@ function editRequest(csrf_token) {
             return;
         }
     });
-    console.log("Ending program.");
+    console.log("Ending program."); // logoutRequest(login_token);
 }
+
+// Step 5: POST request to log out.
+function logoutRequest(login_token) {
+    var params_4 = {
+        action: "logout",
+        token: login_token,
+        format: "json"
+    };
+
+    console.log("Making logout request...");
+    request.post({ url: url, form: params_4 }, function (error, res, body) {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        console.log(JSON.stringify(JSON.parse(body)));
+        console.log("Ending program.");
+    });
+}
+
 
 // Start From Step 1
 getLoginToken();
