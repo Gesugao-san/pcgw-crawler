@@ -6,23 +6,62 @@
 		body {
 			margin: 20px;
 		}
+		table, th, td {
+			border: 1px solid white;
+		}
 	</style>
 	<link rel="stylesheet" href="dark-theme.css">
 </head>
 
 <body>
-	<h1>Area of Triangle</h1>
 	<p>
-		Base: <input type="text" size="4" id="base">
-		Height: <input type="text" size="4" id="height">
-		<br>
-		<button type="button" onclick="triangleArea();">triangleArea</button>
+		<h1>Echo (pop-up and console)</h1>
+		<table>
+			<tr>
+				<td>Status:</td>
+				<td id="echo_status" width="220px">Waiting for input...</td>
+			</tr>
+			<tr>
+				<td>Input: <input type="text" size="4" id="echo_in"></td>
+				<td>
+					<button type="button" onclick="echoSay();">Echo</button>
+					<button type="button" onclick="echoClear();">Clear</button>
+				</td>
+			</tr>
+		</table>
 	</p>
-	<p id="output">Area = Waiting for input...</p>
+	<hr>
+	<p>
+		<h1>Area of Triangle</h1>
+		<table>
+			<tr>
+				<td>Status:</td>
+				<td id="triangle_status" width="220px">Waiting for input...</td>
+			</tr>
+			<tr>
+				<td>
+					Base: <input type="text" size="7" id="triangle_in1"><br>
+					Height: <input type="text" size="5" id="triangle_in2">
+				</td>
+				<td>
+					<button type="button" onclick="triangleСalculate();">Сalculate</button><br>
+					<button type="button" onclick="triangleClear();">Clear</button>
+				</td>
+			</tr>
+			<tr>
+				<td>Answer:</td>
+				<td id="triangle_out" width="220px">N\A</td>
+			</tr>
+		</table>
+	</p>
+	<hr>
+	<h1>Get JSON (broken)</h1>
+	<p>
+		<button type="button" onclick="getJSON();">getJSON</button>
+		<p id="json_out">JSON: Waiting for input...</p>
+	</p>
 	<script src=".\index.js"></script>
 	<hr>
-	<button type="button" onclick="getJSON();">getJSON</button>
-	<p id="output2">JSON = Waiting for input...</p>
 </body>
 
 </html>
