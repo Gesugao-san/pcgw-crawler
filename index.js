@@ -58,6 +58,39 @@ function DetermineBaseTemplate(categories_array, genres_array) {
 		return "Singleplayer"
 }
 
+// https://stackoverflow.com/a/34976444/8175291
+// https://bobbyhadz.com/blog/javascript-check-if-array-contains-substring-match
+function replaceTemplateFieldValue(fileDataAsArray, matchOn, replacingOn, delimiterType) {
+	console.log("Script: Replacing base template field values...");
+	let matches = fileDataAsArray.findIndex(s => s.includes(matchOn));
+	if (matches != -1) {
+		console.log("Search of \"" + matchOn + "\" succesed: [" + matches + "]\n" + fileDataAsArray[matches]);
+	} else {
+		console.log("Search of \"" + matchOn + "\" failed!");
+		return 1;
+	}
+	if (delimiterType == "=") {
+		if (fileDataAsArray[matches].split("=")[1][0] == " ") // " = "
+			console.log(fileDataAsArray[matches].split("=")[1].slice(1, -1));
+		else
+		console.log(fileDataAsArray[matches].split("=")[1]);
+		fileDataAsArray[matches] = fileDataAsArray[matches].split("=")[0] + "= " + "ANOTHER GAME TITLE cover.jpg" + "\n";
+		console.log(fileDataAsArray[matches]);
+	} else {
+		throw new Error("Check delimiterType!");
+	}
+	console.log("Script: Replacing base template field values done.");
+}
+
+function writeBaseTemplateToOutput(outputFilePath, DataAsArray) {
+	console.log("Script: File writing...");
+	var file = fs.createWriteStream(outputFilePath);
+	file.on('error', function(err) {throw new Error("Write error!" + err);});
+	DataAsArray.forEach(function(v) {file.write(v);});
+	file.end();
+	console.log("Script: File writing done.");
+}
+
 // wrap a request in an promise
 function downloadPage(url) {
 	return new Promise((resolve, reject) => {
@@ -90,14 +123,17 @@ async function main() {
 		console.log("Steam API: Requested app is present. Determining base template...");
 		baseTemplateVerdict = DetermineBaseTemplate(html[appid].data.categories, html[appid].data.genres);
 		console.log("Verdict: Base template is " + baseTemplateVerdict + ". File: \"" + baseTemplateData[baseTemplateVerdict] + "\".");
-		fs.copyFile(
+		/* fs.copyFile(
 				baseTemplateData["Base Input Path"] + "/" + baseTemplateData[baseTemplateVerdict],
 				baseTemplateData["Base Output Path"] + "/page.wikitext", (err) => {
 			if (err)
 				throw err;
 			else
 				console.log("Base Template was copied to \"" + baseTemplateData["Base Output Path"] + "\".");
-		});
+		}); */
+		var baseTemplateReaded = fs.readFileSync(baseTemplateData["Base Input Path"] + "/" + baseTemplateData[baseTemplateVerdict]).toString().split("\n");
+		replaceTemplateFieldValue(baseTemplateReaded, "cover", "ANOTHER GAME TITLE cover.jpg", "=");
+		writeBaseTemplateToOutput(baseTemplateData["Base Output Path"] + "/page.wikitext", baseTemplateReaded);
 	} catch (error) {
 		console.error(error);
 		return 1;
