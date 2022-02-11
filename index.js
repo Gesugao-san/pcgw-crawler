@@ -70,12 +70,16 @@ function replaceTemplateFieldValue(fileDataAsArray, matchOn, replacingOn, delimi
 		return 1;
 	}
 	if (delimiterType == "=") {
-		if (fileDataAsArray[matches].split("=")[1][0] == " ") // " = "
-			console.log(fileDataAsArray[matches].split("=")[1].slice(1, -1));
+		if (fileDataAsArray[matches].split(delimiterType)[1][0] == " ") // " = "
+			console.log(fileDataAsArray[matches].split(delimiterType)[1].slice(1, -1));
 		else
-		console.log(fileDataAsArray[matches].split("=")[1]);
-		fileDataAsArray[matches] = fileDataAsArray[matches].split("=")[0] + "= " + "ANOTHER GAME TITLE cover.jpg" + "\n";
-		console.log(fileDataAsArray[matches]);
+			console.log(fileDataAsArray[matches].split(delimiterType)[1]);
+		fileDataAsArray[matches] = fileDataAsArray[matches].split(delimiterType)[0] + delimiterType + " " + replacingOn + "\n";
+		console.log(fileDataAsArray[matches].slice(0, -1));
+	} else if (delimiterType == "|") {
+			console.log(fileDataAsArray[matches].split(delimiterType)[1]);
+			fileDataAsArray[matches] = fileDataAsArray[matches].split(delimiterType)[0] + delimiterType + replacingOn + "}}\n";
+			console.log(fileDataAsArray[matches].slice(0, -1));
 	} else {
 		throw new Error("Check delimiterType!");
 	}
@@ -132,7 +136,10 @@ async function main() {
 				console.log("Base Template was copied to \"" + baseTemplateData["Base Output Path"] + "\".");
 		}); */
 		var baseTemplateReaded = fs.readFileSync(baseTemplateData["Base Input Path"] + "/" + baseTemplateData[baseTemplateVerdict]).toString().split("\n");
-		replaceTemplateFieldValue(baseTemplateReaded, "cover", "ANOTHER GAME TITLE cover.jpg", "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "cover", html[appid].data.name + " cover.jpg", "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "/developer", html[appid].data.developers, "|");
+		replaceTemplateFieldValue(baseTemplateReaded, "/publisher", html[appid].data.publishers, "|");
+		replaceTemplateFieldValue(baseTemplateReaded, "steam appid", appid, "=");
 		writeBaseTemplateToOutput(baseTemplateData["Base Output Path"] + "/page.wikitext", baseTemplateReaded);
 	} catch (error) {
 		console.error(error);
