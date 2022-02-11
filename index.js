@@ -406,7 +406,13 @@ async function main() {
 		replaceTemplateFieldValue(baseTemplateReaded, "/publisher", html[appid].data.publishers, "|");
 		replaceTemplateFieldValue(baseTemplateReaded, "/modes", " " + baseTemplateVerdict, "|");
 		replaceTemplateFieldValue(baseTemplateReaded, "/date", Object.keys(html[appid].data.platforms)[0] + "|" + html[appid].data.release_date.date, "|");
-		replaceTemplateFieldValue(baseTemplateReaded, "/genres", " " + html[appid].data.genres[0].description, "|"); // ToDo: array
+		var genresToInsert = "";
+		for (let i = 0; i < html[appid].data.genres.length; i++)
+			if (i != (html[appid].data.genres.length - 1))
+				genresToInsert += html[appid].data.genres[i].description + ", ";
+			else
+				genresToInsert += html[appid].data.genres[i].description;
+		replaceTemplateFieldValue(baseTemplateReaded, "/genres", " " + genresToInsert, "|"); // ToDo: array
 		replaceTemplateFieldValue(baseTemplateReaded, "|steam appid", appid, "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "|official site", html[appid].data.support_info.url, "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "|steam cloud", getArrayOfIDs(html[appid].data.categories).includes(23), "=");
