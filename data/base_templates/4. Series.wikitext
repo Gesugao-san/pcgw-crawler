@@ -1,4 +1,3 @@
-<!-- AUTO GENERATED FROM 'https://www.pcgamingwiki.com/w/index.php?title=PCGamingWiki:Sample_article', DO NOT EDIT! -->
 {{Seriesbox|entries=
 {{Seriesbox/row|[[Sample article]]|2019}}
 {{Seriesbox/row|[[Non-existent article]]|2020}}

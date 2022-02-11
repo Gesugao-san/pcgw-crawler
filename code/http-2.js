@@ -1,6 +1,5 @@
 
 // https://stackoverflow.com/a/51162901/8175291
-
 const request = require('request');
 
 // wrap a request in an promise
