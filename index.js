@@ -320,29 +320,33 @@ function DetermineBaseTemplate(categories_array, genres_array) {
 // https://stackoverflow.com/a/34976444/8175291
 // https://bobbyhadz.com/blog/javascript-check-if-array-contains-substring-match
 function replaceTemplateFieldValue(fileDataAsArray, matchOn, replacingOn, delimiterType) {
-	console.log("Script: Replacing base template field values...");
+	var verbose = false;
+	if (verbose) console.log("Script (func): Replacing base template field values...");
 	let matches = fileDataAsArray.findIndex(s => s.includes(matchOn));
 	if (matches != -1) {
-		console.log("Search of \"" + matchOn + "\" succesed: [" + matches + "]\n" + fileDataAsArray[matches]);
+		console.log("Search of \"" + matchOn + "\" succeeded, line №" + matches);
+		/* console.log('Before: "' + fileDataAsArray[matches] + "\""); */
 	} else {
-		console.log("Search of \"" + matchOn + "\" failed!");
-		return 1;
+		console.error("Search of \"" + matchOn + "\" failed!");
+		throw new Error("Search of \"" + matchOn + "\" failed!");
 	}
 	if (delimiterType == "=") {
-		if (fileDataAsArray[matches].split(delimiterType)[1][0] == " ") // " = "
-			console.log(fileDataAsArray[matches].split(delimiterType)[1].slice(1, -1));
-		else
-			console.log(fileDataAsArray[matches].split(delimiterType)[1]);
+		if (verbose)
+			if (fileDataAsArray[matches].split(delimiterType)[1][0] == " ") // " = "
+				console.log(fileDataAsArray[matches].split(delimiterType)[1].slice(1, -1));
+			else
+				console.log(fileDataAsArray[matches].split(delimiterType)[1]);
 		fileDataAsArray[matches] = fileDataAsArray[matches].split(delimiterType)[0] + delimiterType + " " + replacingOn + "\n";
-		console.log(fileDataAsArray[matches].slice(0, -1));
+		if (verbose) console.log("After: " + fileDataAsArray[matches].slice(0, -1));
 	} else if (delimiterType == "|") {
-			console.log(fileDataAsArray[matches].split(delimiterType)[1]);
-			fileDataAsArray[matches] = fileDataAsArray[matches].split(delimiterType)[0] + delimiterType + replacingOn + "}}\n";
-			console.log(fileDataAsArray[matches].slice(0, -1));
+		if (verbose) console.log(fileDataAsArray[matches].split(delimiterType)[1]);
+		fileDataAsArray[matches] = fileDataAsArray[matches].split(delimiterType)[0] + delimiterType + replacingOn + "}}\n";
+		if (verbose) console.log(fileDataAsArray[matches].slice(0, -1));
 	} else {
+		console.error("Check delimiterType!");
 		throw new Error("Check delimiterType!");
 	}
-	console.log("Script: Replacing base template field values done.");
+	if (verbose) console.log("Script (func): Replacing base template field values done.");
 }
 
 function writeBaseTemplateToOutput(outputFilePath, DataAsArray) {
@@ -395,6 +399,7 @@ async function main() {
 				console.log("Base Template was copied to \"" + baseTemplateData["Base Output Path"] + "\".");
 		}); */
 		var baseTemplateReaded = fs.readFileSync(baseTemplateData["Base Input Path"] + "/" + baseTemplateData[baseTemplateVerdict]).toString().split("\n");
+		console.log("Script: Replacing base template field values...");
 		replaceTemplateFieldValue(baseTemplateReaded, "cover", html[appid].data.name + " cover.jpg", "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "/developer", html[appid].data.developers, "|");
 		replaceTemplateFieldValue(baseTemplateReaded, "/publisher", html[appid].data.publishers, "|");
@@ -402,6 +407,7 @@ async function main() {
 		replaceTemplateFieldValue(baseTemplateReaded, "/genres", " " + html[appid].data.genres[0].description, "|"); // ToDo: array
 		replaceTemplateFieldValue(baseTemplateReaded, "steam appid", appid, "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "official site", html[appid].data.support_info.url, "=");
+		console.log("Script: Replacing base template field values done.");
 		writeBaseTemplateToOutput(baseTemplateData["Base Output Path"] + "/page.wikitext", baseTemplateReaded);
 	} catch (error) {
 		console.error(error);
