@@ -20,6 +20,10 @@ if (matches != -1) {
 	return 1;
 }
 
+console.log(array[matches].split("=")[1].slice(1, -1));
+array[matches] = array[matches].split("=")[0] + "= " + "ANOTHER GAME TITLE cover.jpg" //array[matches].split("=")[1].replace("GAME", "ANOTHER GAME");
+console.log(array[matches]);
+
 /* function templateSearch(array) {
 	array
 } */
