@@ -375,7 +375,7 @@ function downloadPage(url) {
 // all you need to do is use async functions and await
 // for functions returning promises
 async function main() {
-	appid = 10;
+	appid = 762360;
 	console.log("Script: Started up. Target Steam AppID: " + appid);
 	console.log("Script: Fetching Steam API data...");
 	try {
@@ -400,13 +400,18 @@ async function main() {
 		}); */
 		var baseTemplateReaded = fs.readFileSync(baseTemplateData["Base Input Path"] + "/" + baseTemplateData[baseTemplateVerdict]).toString().split("\n");
 		console.log("Script: Replacing base template field values...");
-		replaceTemplateFieldValue(baseTemplateReaded, "cover", html[appid].data.name + " cover.jpg", "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|cover", html[appid].data.name + " cover.jpg", "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "/developer", html[appid].data.developers, "|");
 		replaceTemplateFieldValue(baseTemplateReaded, "/publisher", html[appid].data.publishers, "|");
 		replaceTemplateFieldValue(baseTemplateReaded, "/date", Object.keys(html[appid].data.platforms)[0] + "|" + html[appid].data.release_date.date, "|");
 		replaceTemplateFieldValue(baseTemplateReaded, "/genres", " " + html[appid].data.genres[0].description, "|"); // ToDo: array
-		replaceTemplateFieldValue(baseTemplateReaded, "steam appid", appid, "=");
-		replaceTemplateFieldValue(baseTemplateReaded, "official site", html[appid].data.support_info.url, "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|steam appid", appid, "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|official site", html[appid].data.support_info.url, "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|steam cloud", getArrayOfIDs(html[appid].data.categories).includes(23), "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|controller support", getArrayOfIDs(html[appid].data.categories).includes(18), "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|full controller", getArrayOfIDs(html[appid].data.categories).includes(28), "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|local play  ", getArrayOfIDs(html[appid].data.categories).includes(37), "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|online play  ", getArrayOfIDs(html[appid].data.categories).includes(36), "=");
 		console.log("Script: Replacing base template field values done.");
 		writeBaseTemplateToOutput(baseTemplateData["Base Output Path"] + "/page.wikitext", baseTemplateReaded);
 	} catch (error) {
