@@ -139,7 +139,10 @@ async function main() {
 		replaceTemplateFieldValue(baseTemplateReaded, "cover", html[appid].data.name + " cover.jpg", "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "/developer", html[appid].data.developers, "|");
 		replaceTemplateFieldValue(baseTemplateReaded, "/publisher", html[appid].data.publishers, "|");
+		replaceTemplateFieldValue(baseTemplateReaded, "/date", Object.keys(html[appid].data.platforms)[0] + "|" + html[appid].data.release_date.date, "|");
+		replaceTemplateFieldValue(baseTemplateReaded, "/genres", " " + html[appid].data.genres[0].description, "|"); // ToDo: array
 		replaceTemplateFieldValue(baseTemplateReaded, "steam appid", appid, "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "official site", html[appid].data.support_info.url, "=");
 		writeBaseTemplateToOutput(baseTemplateData["Base Output Path"] + "/page.wikitext", baseTemplateReaded);
 	} catch (error) {
 		console.error(error);
