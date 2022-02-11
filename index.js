@@ -1,7 +1,18 @@
 
 // https://stackoverflow.com/a/51162901/8175291
 const request = require('request');
-var appid, base_template;
+const fs = require('fs');
+
+var appid, baseTemplateVerdict;
+var baseTemplateData = {
+	"Base Input Path":  "data/base_templates",
+	"Base Output Path": "cache/output",
+	"Singleplayer":    "1. Game (singleplayer).wikitext",
+	"Multiplayer":     "2. Game (multiplayer).wikitext",
+	"Unknown":         "3. Game (unknown).wikitext",
+	"Series":          "4. Series.wikitext",
+	"Sample article":  "5. Sample article.wikitext"
+}
 
 
 function getArrayOfIDs(origin_array) {
@@ -64,10 +75,11 @@ function downloadPage(url) {
 // all you need to do is use async functions and await
 // for functions returning promises
 async function main() {
+	appid = 10;
+	console.log("Script: Started up. Target Steam AppID: " + appid);
 	console.log("Script: Fetching Steam API data...");
 	try {
 		/* for (const i of Array.from(Array(12).keys()).slice(3, 5)) {} */
-		appid = 10;
 		const html = JSON.parse(await downloadPage("https://store.steampowered.com/api/appdetails/?appids=" + appid + "&l=en&format=json")); //('https://microsoft.com')
 		console.log("Script: Steam API data successfully fetched.");
 		if (html[appid].success != true) {
@@ -76,12 +88,21 @@ async function main() {
 			return 1;
 		}
 		console.log("Steam API: Requested app is present. Determining base template...");
-		console.log("Verdict: Base template is " + DetermineBaseTemplate(html[appid].data.categories, html[appid].data.genres) + ".");
+		baseTemplateVerdict = DetermineBaseTemplate(html[appid].data.categories, html[appid].data.genres);
+		console.log("Verdict: Base template is " + baseTemplateVerdict + ". File: \"" + baseTemplateData[baseTemplateVerdict] + "\".");
+		fs.copyFile(
+				baseTemplateData["Base Input Path"] + "/" + baseTemplateData[baseTemplateVerdict],
+				baseTemplateData["Base Output Path"] + "/page.wikitext", (err) => {
+			if (err)
+				throw err;
+			else
+				console.log("Base Template was copied to \"" + baseTemplateData["Base Output Path"] + "\".");
+		});
 	} catch (error) {
 		console.error(error);
 		return 1;
 	}
-	console.log("Script: Done.");
+	console.log("Script: Finished.");
 }
 
 // run your async function

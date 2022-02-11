@@ -1,4 +1,3 @@
-<!-- AUTO GENERATED FROM 'https://www.pcgamingwiki.com/w/index.php?title=PCGamingWiki:Sample_article', DO NOT EDIT! -->
 {{stub}}
 {{Infobox game
 |cover        = GAME TITLE cover.jpg
@@ -16,7 +15,7 @@
 |taxonomy     =
 {{Infobox game/row/taxonomy/monetization      | }}
 {{Infobox game/row/taxonomy/microtransactions | }}
-{{Infobox game/row/taxonomy/modes             | Singleplayer }}
+{{Infobox game/row/taxonomy/modes             | Multiplayer }}
 {{Infobox game/row/taxonomy/pacing            | }}
 {{Infobox game/row/taxonomy/perspectives      | }}
 {{Infobox game/row/taxonomy/controls          | }}
@@ -215,6 +214,39 @@
  |fan       = 
  |ref       = 
 }}
+}}
+
+==Network==
+{{Network/Multiplayer
+|local play           = unknown
+|local play players   = 
+|local play modes     = 
+|local play notes     = 
+|lan play             = unknown
+|lan play players     = 
+|lan play modes       = 
+|lan play notes       = 
+|online play          = unknown
+|online play players  = 
+|online play modes    = 
+|online play notes    = 
+|asynchronous         = 
+|asynchronous notes   = 
+}}{{Network/Connections
+|matchmaking        = 
+|matchmaking notes  = 
+|p2p                = 
+|p2p notes          = 
+|dedicated          = 
+|dedicated notes    = 
+|self-hosting       = 
+|self-hosting notes = 
+|direct ip          = 
+|direct ip notes    = 
+}}{{Network/Ports
+|tcp  = 
+|udp  = 
+|upnp = 
 }}
 
 ==Other information==
