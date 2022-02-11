@@ -400,18 +400,27 @@ async function main() {
 		}); */
 		var baseTemplateReaded = fs.readFileSync(baseTemplateData["Base Input Path"] + "/" + baseTemplateData[baseTemplateVerdict]).toString().split("\n");
 		console.log("Script: Replacing base template field values...");
+		var warningForAuto = "Fetched from Steam API in automatic mode.";
 		replaceTemplateFieldValue(baseTemplateReaded, "|cover", html[appid].data.name + " cover.jpg", "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "/developer", html[appid].data.developers, "|");
 		replaceTemplateFieldValue(baseTemplateReaded, "/publisher", html[appid].data.publishers, "|");
+		replaceTemplateFieldValue(baseTemplateReaded, "/modes", " " + baseTemplateVerdict, "|");
 		replaceTemplateFieldValue(baseTemplateReaded, "/date", Object.keys(html[appid].data.platforms)[0] + "|" + html[appid].data.release_date.date, "|");
 		replaceTemplateFieldValue(baseTemplateReaded, "/genres", " " + html[appid].data.genres[0].description, "|"); // ToDo: array
 		replaceTemplateFieldValue(baseTemplateReaded, "|steam appid", appid, "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "|official site", html[appid].data.support_info.url, "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "|steam cloud", getArrayOfIDs(html[appid].data.categories).includes(23), "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|steam cloud notes", warningForAuto, "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "|controller support", getArrayOfIDs(html[appid].data.categories).includes(18), "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|controller support notes", warningForAuto, "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "|full controller", getArrayOfIDs(html[appid].data.categories).includes(28), "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|full controller notes", warningForAuto, "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "|local play  ", getArrayOfIDs(html[appid].data.categories).includes(37), "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|local play notes", warningForAuto, "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|lan play  ", getArrayOfIDs(html[appid].data.categories).includes(37), "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|lan play notes", warningForAuto, "=");
 		replaceTemplateFieldValue(baseTemplateReaded, "|online play  ", getArrayOfIDs(html[appid].data.categories).includes(36), "=");
+		replaceTemplateFieldValue(baseTemplateReaded, "|online play notes", warningForAuto, "=");
 		console.log("Script: Replacing base template field values done.");
 		writeBaseTemplateToOutput(baseTemplateData["Base Output Path"] + "/page.wikitext", baseTemplateReaded);
 	} catch (error) {
