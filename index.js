@@ -7,17 +7,17 @@ var appid, baseTemplateVerdict;
 var baseTemplateData = {
 	"Base Input Path":  "data/base_templates",
 	"Base Output Path": "cache/output",
-	"Singleplayer":    "1. Game (singleplayer).wikitext",
-	"Multiplayer":     "2. Game (multiplayer).wikitext",
-	"Unknown":         "3. Game (unknown).wikitext",
-	"Series":          "4. Series.wikitext",
-	"Sample article":  "5. Sample article.wikitext"
+	"Singleplayer":     "1. Game (singleplayer).wikitext",
+	"Multiplayer":      "2. Game (multiplayer).wikitext",
+	"Unknown":          "3. Game (unknown).wikitext",
+	"Series":           "4. Series.wikitext",
+	"Sample article":   "5. Sample article.wikitext"
 }
 
 // https://www.pcgamingwiki.com/wiki/Taxonomy
 // https://www.pcgamingwiki.com/wiki/PCGamingWiki:Editing_guide/The_infobox
 var taxonomyData = {
-	"Monetization": [
+	"Monetization": [ // Steam genres 37
 		"Ad-supported",
 		"DLC",
 		"Expansion pack",
@@ -26,7 +26,7 @@ var taxonomyData = {
 		"Sponsored",
 		"Subscription"
 	],
-	"Microtransactions": [
+	"Microtransactions": [ // Steam categories 35
 		"Boost",
 		"Cosmetic",
 		"Currency",
@@ -40,8 +40,8 @@ var taxonomyData = {
 		"Unlock"
 	],
 	"Modes": [
-		"Multiplayer",
-		"Singleplayer"
+		"Multiplayer", // Steam genres 29, Steam categories 1, 9, 36, 37, 38, 39
+		"Singleplayer" // Steam categories 2
 	],
 	"Pacing": [
 		"Continuous turn-based",
@@ -55,7 +55,7 @@ var taxonomyData = {
 		"Bird's-eye view",
 		"Cinematic camera",
 		"First-person",
-		"Flip screen",
+		"Flip screen", // Steam categories 24
 		"Free-roaming camera",
 		"Isometric",
 		"Scrolling",
@@ -64,7 +64,7 @@ var taxonomyData = {
 		"Third-person",
 		"Top-down view"
 	],
-	"Controls": [
+	"Controls": [ // Steam categories 18, 28, 31, 40
 		"Direct control",
 		"Gestures",
 		"Menu-based",
@@ -75,8 +75,8 @@ var taxonomyData = {
 	],
 	"Genres": [
 		"4X",
-		"Action",
-		"Adventure",
+		"Action", // Steam genres 1
+		"Adventure", // Steam genres 25
 		"Arcade",
 		"ARPG",
 		"Artillery",
@@ -84,14 +84,14 @@ var taxonomyData = {
 		"Board",
 		"Brawler",
 		"Building",
-		"Business",
+		"Business", // Steam genres 50
 		"Card/tile",
 		"CCG",
 		"Chess",
 		"Clicker",
-		"Dating",
-		"Driving",
-		"Educational",
+		"Dating", // Steam genres 71, 72
+		"Driving", // Steam genres 9+18
+		"Educational", // Steam genres 54, 56
 		"Endless runner",
 		"Falling block",
 		"Fighting",
@@ -105,11 +105,11 @@ var taxonomyData = {
 		"Interactive book",
 		"JRPG",
 		"Life sim",
-		"Mental training",
+		"Mental training", // Steam genres 73, 74
 		"Metroidvania",
 		"Mini-games",
-		"MMO",
-		"MMORPG",
+		"MMO", // Steam categories 20, Steam genres 29
+		"MMORPG", // Steam categories 20 + Steam genres 29+3
 		"Music/rhythm",
 		"Open world",
 		"Paddle",
@@ -118,21 +118,21 @@ var taxonomyData = {
 		"Platform",
 		"Puzzle",
 		"Quick time events",
-		"Racing",
+		"Racing", // Steam genres 9
 		"Rail shooter",
 		"Roguelike",
 		"Rolling ball",
 		"RPG",
 		"RTS",
 		"Sandbox",
-		"Shooter",
-		"Simulation",
-		"Sports",
+		"Shooter", // Steam genres 7
+		"Simulation", // Steam genres 28
+		"Sports", // Steam genres 18
 		"Stealth",
-		"Strategy",
+		"Strategy", // Steam genres 2
 		"Survival",
 		"Survival horror",
-		"Tactical RPG",
+		"Tactical RPG", // Steam genres 3
 		"Tactical shooter",
 		"TBS",
 		"Text adventure",
@@ -142,10 +142,10 @@ var taxonomyData = {
 		"TPS",
 		"Tricks",
 		"Trivia/quiz",
-		"Vehicle combat",
-		"Vehicle simulator",
+		"Vehicle combat", // Steam genres 9
+		"Vehicle simulator", // Steam genres 28
 		"Visual novel",
-		"Wargame",
+		"Wargame", // Steam genres 2
 		"Word"
 	],
 	"Sports": [
@@ -224,7 +224,7 @@ var taxonomyData = {
 		"Voxel art"
 	],
 	"Themes": [
-		"Adult",
+		"Adult", // Steam genres 72, 73, 74
 		"Africa",
 		"Amusement park",
 		"Antarctica",
