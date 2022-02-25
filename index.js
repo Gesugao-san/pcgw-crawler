@@ -125,7 +125,7 @@ var taxonomyData = {
 		"RPG",
 		"RTS",
 		"Sandbox",
-		"Shooter", // Steam genres 7
+		"Shooter",
 		"Simulation", // Steam genres 28
 		"Sports", // Steam genres 18
 		"Stealth",
